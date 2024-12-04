@@ -1,0 +1,5 @@
+input[name='form_confirm'] {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
