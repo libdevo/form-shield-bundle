@@ -16,15 +16,12 @@ class FormCheckerType extends AbstractType
         $resolver->setDefault('constraints', [
             new FormChecker(),
         ]);
+        $resolver->setDefault('required', false);
+        $resolver->setDefault('mapped', false);
     }
 
     public function getParent(): string
     {
         return TextType::class;
-    }
-
-    public function getBlockPrefix(): string
-    {
-        return 'core_form_checker';
     }
 }

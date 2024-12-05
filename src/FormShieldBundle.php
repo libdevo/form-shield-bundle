@@ -14,4 +14,13 @@ class FormShieldBundle extends AbstractBundle
     {
         $container->import('../config/form_checker.yaml');
     }
+
+    public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
+    {
+        $builder->prependExtensionConfig('twig', [
+            'form_themes' => [
+                '@FormShield/form/form_checker_field_theme.html.twig',
+            ],
+        ]);
+    }
 }
