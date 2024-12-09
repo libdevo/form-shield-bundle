@@ -9,6 +9,7 @@ use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class StyleResponseInjectorEventListener
 {
@@ -24,6 +25,10 @@ class StyleResponseInjectorEventListener
         }
 
         $response = $event->getResponse();
+
+        if ($response instanceof BinaryFileResponse) {
+            return;
+        }
 
         $this->injectScript($response);
     }
