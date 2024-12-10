@@ -1,0 +1,8 @@
+{% block form_checker_row %}
+    {% set attr = attr|merge({
+        'data-trigger-form-checker': 'true',
+        'autocomplete': 'off',
+    }) %}
+
+    {{ block('form_widget') }}
+{% endblock %}

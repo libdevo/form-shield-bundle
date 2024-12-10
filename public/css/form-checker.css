@@ -1,0 +1,5 @@
+input[data-trigger-form-checker] {
+    position: fixed;
+    top: -300px;
+    left: -300px;
+}

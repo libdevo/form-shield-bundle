@@ -1,0 +1,5 @@
+services:
+    Libdevo\FormShieldBundle\:
+        autoconfigure: true
+        autowire: true
+        resource: '../src/'
